@@ -2,7 +2,7 @@ FROM node:latest as node
 WORKDIR /app
 COPY package.json /app
 RUN npm install --silent
-RUN npm install -g typescript
+RUN npm link typescript
 COPY . .
 RUN npm run build
 
