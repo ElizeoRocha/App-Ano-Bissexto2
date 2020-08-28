@@ -3,6 +3,7 @@ WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm install typescript
+RUN npm link typescript
 RUN npm run build --prod
 
 FROM nginx:alpine
