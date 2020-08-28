@@ -2,6 +2,7 @@ FROM node:latest as node
 WORKDIR /app
 COPY . .
 RUN npm install
+RUN npm install typescript
 RUN npm run build --prod
 
 FROM nginx:alpine
