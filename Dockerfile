@@ -4,5 +4,6 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-FROM centos/nginx-116-centos7:latest
-COPY --from=node /app/dist/anoBissexto /usr/share/nginx/html
+FROM nginxinc/nginx-unprivileged:stable
+COPY --from=node /app/dist/anoBissexto /var/www
+
