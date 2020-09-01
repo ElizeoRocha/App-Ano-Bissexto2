@@ -4,5 +4,5 @@ COPY . .
 RUN npm install
 RUN npm run build --prod
 
-FROM nginx:alpine
+FROM centos/nginx-116-centos7:latest
 COPY --from=node /app/dist/anoBissexto /usr/share/nginx/html
